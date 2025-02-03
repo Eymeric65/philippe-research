@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 # --- Simulation Parameters ---
 box_width, box_height = 100, 100   # Dimensions of the box
 timesteps = 1000                   # Total number of time steps
-p_ray = 0.05                   # Probability of emitting a ray at each step
+p_ray = 0.25                 # Probability of emitting a ray at each step
 ray_length = 2                    # Length of each emitted ray
 
 h, k, r = 50, 50, np.sqrt(2)*50  # Circle center and radius
@@ -157,10 +157,16 @@ for i in range(len(rays)):
 
 position_philippe = np.array(position_philippe)
 
-window_size=int(len(rays)/20)
+#window_size=int(len(rays)/20)
+window_size = 10
 
 position_philippe[:,0] =moving_average(position_philippe[:,0],window_size)
 position_philippe[:,1] =moving_average(position_philippe[:,1],window_size)
+
+#try
+#position_retrieved[:,0] =moving_average(position_retrieved[:,0],window_size)
+#position_retrieved[:,1] =moving_average(position_retrieved[:,1],window_size)
+
 
 
 print(X)
